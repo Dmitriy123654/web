@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html>
+  <head>
+    <title>Информация о курсе</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      .detailed-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      .detailed-table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+      }
+
+      .detailed-image {
+        max-width: 200px;
+        max-height: 200px;
+        width: auto;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .detailed-details {
+        vertical-align: top;
+        padding-left: 20px;
+      }
+
+      .detailed-title {
+        font-weight: bold;
+      }
+
+      .detailed-price {
+        text-align: right;
+      }
+
+      .comment {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      .comment-user {
+        font-weight: bold;
+      }
+
+      .comment-rating {
+        color: gold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <section class="top-nav">
+        <a href="index.html"
+          ><img class="logo" src="media/logo2.png" alt="Логотип" class="logo"
+        /></a>
+        <div>Образовательная платформа</div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="courses.html">Курсы</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        <h2>Подробное описание курса</h2>
+        <table class="detailed-table">
+          <tr>
+            <td rowspan="2">
+              <img
+                src="media/happyProgrammer.jpg"
+                alt="Изображение курса"
+                class="detailed-image"
+              />
+            </td>
+            <td class="detailed-details">
+              <div class="detailed-title">Курс 1</div>
+              <div>Описание курса 1</div>
+            </td>
+            <td class="detailed-price">$100</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="detailed-details">
+              Дополнительная информация об этом курсе.
+            </td>
+          </tr>
+        </table>
+
+        <h3>Оставить отзыв</h3>
+        <div class="comment-form">
+          <form action="add_comment.php" method="POST">
+            <label for="username">Ваше имя:</label>
+            <input type="text" name="username" id="username" required />
+            <br />
+            <label for="comment">Ваш отзыв:</label>
+            <textarea name="comment" id="comment" required></textarea>
+            <br />
+            <label for="rating">Оценка:</label>
+            <select name="rating" id="rating" required>
+              <option value="" disabled selected>Выберите оценку</option>
+              <option value="1">☆</option>
+              <option value="2">☆☆</option>
+              <option value="3">☆☆☆</option>
+              <option value="4">☆☆☆☆</option>
+              <option value="5">☆☆☆☆☆</option>
+            </select>
+            <br />
+            <input type="submit" value="Оставить отзыв" />
+          </form>
+        </div>
+
+        <h3>Комментарии</h3>
+        <div class="comment">
+          <div class="comment-user">Пользователь 1</div>
+          <div class="comment-rating">★★★★★</div>
+          <div>Очень полезный курс! Рекомендую.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 2</div>
+          <div class="comment-rating">★★★☆☆</div>
+          <div>Неплохой курс, но есть места для улучшения.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 3</div>
+          <div class="comment-rating">★★★★★</div>
+          <div>Отличный курс, очень понравился!</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 4</div>
+          <div class="comment-rating">★★★★☆</div>
+          <div>Хороший курс, но некоторые темы могут быть сложными.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 5</div>
+          <div class="comment-rating">★★★☆☆</div>
+          <div>Ожидал большего от этого курса.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 6</div>
+          <div class="comment-rating">★★★★★</div>
+          <div>Прекрасный курс! Рекомендую всем.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 7</div>
+          <div class="comment-rating">★★★★★</div>
+          <div>Информативный и хорошо структурированный курс.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 8</div>
+          <div class="comment-rating">★★☆☆☆</div>
+          <div>Не понравился формат обучения.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 9</div>
+          <div class="comment-rating">★★★★★</div>
+          <div>Отличный курс, много практики.</div>
+        </div>
+        <div class="comment">
+          <div class="comment-user">Пользователь 10</div>
+          <div class="comment-rating">★★★★☆</div>
+          <div>Хорошо объясненные материалы, но не хватает заданий.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Образовательная платформа. Все права защищены.</p>
+    </footer>
+  </body>
+</html>

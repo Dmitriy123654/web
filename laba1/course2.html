@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<html>
+  <head>
+    <title>Информация о курсе</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <style>
+    .detailed-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .detailed-table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .detailed-image {
+      max-width: 200px;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .detailed-details {
+      vertical-align: top;
+      padding-left: 20px;
+    }
+
+    .detailed-title {
+      font-weight: bold;
+    }
+
+    .detailed-price {
+      text-align: right;
+    }
+  </style>
+
+  <body>
+    <header>
+      <section class="top-nav">
+        <a href="index.html"
+          ><img class="logo" src="media/logo2.png" alt="Логотип" class="logo"
+        /></a>
+        <div>Образовательная платформа</div>
+        <input id="menu-toggle" type="checkbox" />
+        <label class="menu-button-container" for="menu-toggle">
+          <div class="menu-button"></div>
+        </label>
+        <ul class="menu">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="courses.html">Курсы</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <main>
+      <section>
+        <h2>Подробное описание курса</h2>
+        <table class="detailed-table">
+          <tr>
+            <td rowspan="2">
+              <img
+                src="media/happyProgrammer.jpg"
+                alt="Изображение курса"
+                class="detailed-image"
+              />
+            </td>
+            <td class="detailed-details">
+              <div class="detailed-title">Курс 2</div>
+              <div>Описание курса 2</div>
+            </td>
+            <td class="detailed-price">$300</td>
+          </tr>
+          <tr>
+            <td colspan="2" class="detailed-details">
+              Дополнительная информация об этом курсе.
+            </td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </body>
+  <footer>
+    <p>&copy; 2024 Образовательная платформа. Все права защищены.</p>
+  </footer>
+</html>
