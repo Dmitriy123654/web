@@ -1,79 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Образовательная платформа</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-    <style>
-      .news-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        grid-gap: 20px;
-        list-style: none;
-        padding: 0;
-      }
 
-      .news-item {
-        border: 1px solid #ccc;
-        padding: 10px;
-      }
-
-      .news-item h4 {
-        margin-top: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <section class="top-nav">
-        <a href="index.html"
-          ><img class="logo" src="media/logo2.png" alt="Логотип"
-        /></a>
-        <div><a style="color:white" href="index.html">Образовательная платформа</a></div>
-        <input id="menu-toggle" type="checkbox" />
-        <label class="menu-button-container" for="menu-toggle">
-          <div class="menu-button"></div>
-        </label>
-        <ul class="menu">
-          <li><a href="index.html">Главная</a></li>
-          <li><a href="courses.html">Курсы</a></li>
-        </ul>
-      </section>
-    </header>
-
-    <main>
-      <section>
-        <h2>Добро пожаловать на нашу платформу!</h2>
-        <p>Здесь вы найдете множество курсов по различным темам.</p>
-      </section>
-
-      <section>
-        <h3>Новости</h3>
-        <form id="news-form">
-          <label for="title">Заголовок:</label>
-          <input type="text" id="title" required />
-          <br />
-          <label for="description">Описание:</label>
-          <input type="text" id="description" required />
-          <br />
-          <label for="date">Дата публикации:</label>
-          <input type="date" id="date" required />
-          <br />
-          <button type="submit">Добавить новость</button>
-        </form>
-        <br />
-        <label for="search">Поиск:</label>
-        <input type="text" id="search" />
-        <br />
-        <button id="sort-button">Сортировать по дате</button>
-        <ul class="news-list"></ul>
-      </section>
-    </main>
-
-    <footer>
-      <p>&copy; 2024 Образовательная платформа. Все права защищены.</p>
-    </footer>
-    <script>
       // Функция для сохранения новости в Local Storage
       function saveNews(title, description, date) {
         var newsList = JSON.parse(localStorage.getItem("newsList")) || [];
@@ -232,6 +157,3 @@
         });
 
       displayNews();
-    </script>
-  </body>
-</html>
