@@ -1,223 +1,379 @@
 ﻿<!DOCTYPE html>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <html>
-<head><title>Список курсов</title>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
-    <style>       table {
+  <head>
+    <title>Список курсов</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      table {
         width: 100%;
         border-collapse: collapse;
-    }
+      }
 
-    th,
-    td {
+      th,
+      td {
         padding: 8px;
         text-align: left;
-    }
+      }
 
-    th {
+      th {
         background-color: #f2f2f2;
-    }
+      }
 
-    tr:nth-child(even) {
+      tr:nth-child(even) {
         background-color: #dddddd;
-    }
+      }
 
-    form {
+      form {
         max-width: 400px;
-    }
+      }
 
-    label {
+      label {
         display: block;
         margin-bottom: 8px;
         font-weight: bold;
-    }
+      }
 
-    input[type="text"],
-    textarea,
-    input[type="date"] {
+      input[type="text"],
+      textarea,
+      input[type="date"] {
         width: 100%;
         padding: 8px;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
         margin-bottom: 16px;
-    }
+      }
 
-    input[type="submit"] {
+      input[type="submit"] {
         background-color: #4caf50;
         color: white;
         padding: 10px 20px;
         border: none;
         border-radius: 4px;
         cursor: pointer;
-    }
+      }
 
-    input[type="submit"]:hover {
+      input[type="submit"]:hover {
         background-color: #45a049;
-    }
+      }
     </style>
-</head>
-<body>
-<header>
-    <section class="top-nav">
+  </head>
+  <body>
+    <header>
+      <section class="top-nav">
         <a href="index.html"
-        ><img
-                class="logo"
-                src="media/logo2.png"
-                alt="Логотип"
-                class="logo"
+          ><img class="logo" src="media/logo2.png" alt="Логотип" class="logo"
         /></a>
         <div>Образовательная платформа</div>
-        <input id="menu-toggle" type="checkbox"/>
+        <input id="menu-toggle" type="checkbox" />
         <label class="menu-button-container" for="menu-toggle">
-            <div class="menu-button"></div>
+          <div class="menu-button"></div>
         </label>
         <ul class="menu">
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="courses.html">Курсы</a></li>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="courses.html">Курсы</a></li>
         </ul>
-    </section>
-</header>
-<main>
-    <section>
+      </section>
+    </header>
+    <main>
+      <section>
         <h2>Список курсов</h2>
         <table id="courses-table">
-            <tr>
-                <th>Название</th>
-                <th>Цена</th>
-                <th>Длительность</th>
-                <th>Описание</th>
-                <th>Дата создания</th>
-                <th>Действия</th>
-            </tr>
+          <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Длительность</th>
+            <th>Описание</th>
+            <th>Дата создания</th>
+            <th>Действия</th>
+          </tr>
         </table>
-    </section>
-    <section>
+      </section>
+      <section>
         <h2>Добавить новый курс</h2>
-        <a href="#openModal">Добавить</a>
-    </section>
-</main>
-<footer>
-    <p>© 2024 Образовательная платформа. Все права защищены.</p>
-</footer>
-<div id="openModal" class="modal">
-    <div class="modal-dialog">
+        <button id="open-button">Добавить</button>
+      </section>
+    </main>
+    <footer>
+      <p>© 2024 Образовательная платформа. Все права защищены.</p>
+    </footer>
+    <div id="openModal" class="modal">
+      <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Добавить новый курс</h3>
-                <a href="#close" title="Close" class="close">×</a>
-            </div>
-            <div class="modal-body">
-                <form id="add-course-form">
-                    <label for="course_title">Название:</label>
-                    <input
-                            type="text"
-                            name="course_title"
-                            id="course_title"
-                            required
-                    />
-                    <br/>
-                    <label for="course_price">Цена:</label>
-                    <input
-                            type="text"
-                            name="course_price"
-                            id="course_price"
-                            required
-                    />
-                    <br/>
-                    <label for="course_duration">Длительность:</label>
-                    <input
-                            type="text"
-                            name="course_duration"
-                            id="course_duration"
-                            required
-                    />
-                    <br/>
-                    <label for="course_description">Описание:</label>
-                    <textarea
-                            name="course_description"
-                            id="course_description"
-                            required
-                    ></textarea>
-                    <br/>
-                    <label for="course_date">Дата создания:</label>
-                    <input
-                            type="date"
-                            name="course_date"
-                            id="course_date"
-                            required
-                    />
-                    <br/>
-                    <input type="submit" value="Добавить"/>
-                </form>
-            </div>
+          <div class="modal-header">
+            <h3 class="modal-title">Добавить новый курс</h3>
+            <a href="#close" title="Close" class="close">×</a>
+          </div>
+          <div class="modal-body">
+            <form id="add-course-form">
+              <label for="course_title">Название:</label>
+              <input
+                type="text"
+                name="course_title"
+                id="course_title"
+                required
+              />
+              <br />
+              <label for="course_price">Цена:</label>
+              <input
+                type="text"
+                name="course_price"
+                id="course_price"
+                required
+              />
+              <br />
+              <label for="course_duration">Длительность:</label>
+              <input
+                type="text"
+                name="course_duration"
+                id="course_duration"
+                required
+              />
+              <br />
+              <label for="course_description">Описание:</label>
+              <textarea
+                name="course_description"
+                id="course_description"
+                required
+              ></textarea>
+              <br />
+              <label for="course_date">Дата создания:</label>
+              <input type="date" name="course_date" id="course_date" required />
+              <br />
+              <input type="submit" value="Добавить" />
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<script>
-    // Open the database (or create it if it doesn't exist)
-    const request = indexedDB.open("coursesDB", 1);
-    // Create the object store and indexes
-    request.onupgradeneeded = function (event) {
+    <div id="edit-course-modal" class="modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">Редактировать курс</h3>
+            <a href="#close" title="Close" class="close">×</a>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" id="edit-course-id" value="" />
+            <form id="edit-course-form">
+              <label for="edit-course-title">Название:</label>
+              <input
+                type="text"
+                name="edit-course-title"
+                id="edit-course-title"
+                required
+              />
+              <br />
+              <label for="edit-course-price">Цена:</label>
+              <input
+                type="text"
+                name="edit-course-price"
+                id="edit-course-price"
+                required
+              />
+              <br />
+              <label for="edit-course-duration">Длительность:</label>
+              <input
+                type="text"
+                name="edit-course-duration"
+                id="edit-course-duration"
+                required
+              />
+              <br />
+              <label for="edit-course-description">Описание:</label>
+              <textarea
+                name="edit-course-description"
+                id="edit-course-description"
+                required
+              ></textarea>
+              <br />
+              <label for="edit-course-date">Дата создания:</label>
+              <input
+                type="date"
+                name="edit-course-date"
+                id="edit-course-date"
+                required
+              />
+              <br />
+              <input type="submit" value="Сохранить изменения" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentCourseId = null;
+      let db_custom = null;
+      // Open the database (or create it if it doesn't exist)
+      document.getElementById("open-button").addEventListener("click", () => {
+        console.log("here");
+        addModalAdd();
+      });
+      const request = indexedDB.open("coursesDB", 1);
+      // Create the object store and indexes
+      request.onupgradeneeded = function (event) {
         const db = event.target.result;
+        db_custom = event.target.result;
         // Create the object store
         const objectStore = db.createObjectStore("courses", {
-            keyPath: "id",
-            autoIncrement: true,
+          keyPath: "id",
+          autoIncrement: true,
         });
         // Create an index on the 'title' property
-        objectStore.createIndex("title", "title", {unique: false});
-    };
-    request.onsuccess = function (event) {
+        objectStore.createIndex("title", "title", { unique: false });
+      };
+      const editForm = document.getElementById("edit-course-form");
+      editForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        updateCourse(db_custom);
+      });
+      request.onsuccess = function (event) {
         const db = event.target.result;
         // Display the courses from the database
         displayCourses(db);
         // Listen for the form submission and add the course to the database
         const form = document.getElementById("add-course-form");
         form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            addCourse(db);
+          e.preventDefault();
+          addCourse(db);
         });
-    };
+      };
 
-    function displayCourses(db) {
+      function displayCourses(db) {
         const table = document.getElementById("courses-table");
         // Clear the table
         while (table.rows.length > 1) {
-            table.deleteRow(1);
+          table.deleteRow(1);
         }
-        const transaction = db.transaction("courses", "readonly");
+        const index = table.rows.length;
+        const transaction = db.transaction("courses", "readwrite");
         const objectStore = transaction.objectStore("courses");
+        const request = objectStore.getAll();
         // Use the index to get all courses
-        const index = objectStore.index("title");
-        index.openCursor().onsuccess = function (event) {
-            const cursor = event.target.result;
-            if (cursor) {
-                const course = cursor.value;
-                const row = table.insertRow();
-                const titleCell = row.insertCell();
-                const priceCell = row.insertCell();
-                const durationCell = row.insertCell();
-                const descriptionCell = row.insertCell();
-                const dateCell = row.insertCell();
-                const actionsCell = row.insertCell();
-                titleCell.textContent = course.title;
-                priceCell.textContent = course.price;
-                durationCell.textContent = course.duration;
-                descriptionCell.textContent = course.description;
-                dateCell.textContent = course.date;
-                const deleteButton = document.createElement("button");
-                deleteButton.textContent = "Удалить";
-                deleteButton.addEventListener("click", function () {
-                    deleteCourse(db, course.id);
-                });
-                actionsCell.appendChild(deleteButton);
-                cursor.continue();
-            }
-        };
-    }
+        // const index = objectStore.index("title");
+        request.onsuccess = function (event) {
+          const courses = event.target.result;
+          if (courses) {
+            courses.forEach((course1) => {
+              const course = course1;
+              const row = table.insertRow(index);
+              row.id = course.id;
+              const titleCell = row.insertCell(0);
+              const priceCell = row.insertCell(1);
+              const durationCell = row.insertCell(2);
+              const descriptionCell = row.insertCell(3);
+              const dateCell = row.insertCell(4);
+              const actionsCell = row.insertCell(5);
+              titleCell.textContent = course.title;
+              priceCell.textContent = course.price;
+              durationCell.textContent = course.duration;
+              descriptionCell.textContent = course.description;
+              dateCell.textContent = course.date;
+              const deleteButton = document.createElement("button");
+              deleteButton.textContent = "Удалить";
+              deleteButton.addEventListener("click", function () {
+                deleteCourse(db, course.id);
+              });
+              actionsCell.appendChild(deleteButton);
 
-    function addCourse(db) {
+              const editButton = document.createElement("button");
+              editButton.textContent = "Редактировать";
+              editButton.addEventListener("click", function () {
+                handleEditClick(course, course.id);
+              });
+              actionsCell.appendChild(editButton);
+
+              // Добавляем обработчик события для отправки формы редактирования
+            });
+          }
+        };
+      }
+      function handleEditClick(course) {
+        currentCourseId = course.id;
+
+        openEditModal(course, course.id); // Передача ID курса
+      }
+
+      function openEditModal(course) {
+        // Получите элементы формы редактирования
+        const modal = document.getElementById("edit-course-modal");
+        const titleInput = document.getElementById("edit-course-title");
+        const priceInput = document.getElementById("edit-course-price");
+        const durationInput = document.getElementById("edit-course-duration");
+        const descriptionInput = document.getElementById(
+          "edit-course-description"
+        );
+        const dateInput = document.getElementById("edit-course-date");
+
+        // Заполните поля формы данными курса
+        titleInput.value = course.title;
+        priceInput.value = course.price;
+        durationInput.value = course.duration;
+        descriptionInput.value = course.description;
+        dateInput.value = course.date;
+
+        // Сохранение ID курса
+        const id = course.id;
+        document.getElementById("edit-course-id").value = id;
+        // Откройте модальное окно
+        modal.style.display = "block";
+      }
+
+      function updateCourse(db) {
+        // Получить данные из формы
+        const title = document.getElementById("edit-course-title").value;
+        const price = document.getElementById("edit-course-price").value;
+        const duration = document.getElementById("edit-course-duration").value;
+        const description = document.getElementById(
+          "edit-course-description"
+        ).value;
+        const date = document.getElementById("edit-course-date").value;
+
+        // Проверить, что все поля заполнены
+        if (!title || !price || !duration || !description || !date) {
+          alert("Все поля должны быть заполнены!");
+          return;
+        }
+
+        // Получить курс из базы данных
+        const transaction = db.transaction("courses", "readwrite");
+        const objectStore = transaction.objectStore("courses");
+        const request = objectStore.get(currentCourseId);
+
+        request.onsuccess = function (event) {
+          const updatedCourse = event.target.result;
+
+          // Сравнить значения
+          if (
+            updatedCourse &&
+            updatedCourse.title === title &&
+            updatedCourse.price === price &&
+            updatedCourse.duration === duration &&
+            updatedCourse.description === description &&
+            updatedCourse.date === date
+          ) {
+            // Значения не изменились, обновление не требуется
+            alert("Значения курса не изменились. Обновление не требуется.");
+            return;
+          }
+
+          // Обновить курс
+          updatedCourse.title = title;
+          updatedCourse.price = price;
+          updatedCourse.duration = duration;
+          updatedCourse.description = description;
+          updatedCourse.date = date;
+
+          objectStore.put(currentCourseId, updatedCourse).onsuccess =
+            function () {
+              displayCourses(db);
+            };
+        };
+      }
+
+      function addCourse(db) {
         const form = document.getElementById("add-course-form");
         const title = form.elements["course_title"].value;
         const price = form.elements["course_price"].value;
@@ -225,44 +381,41 @@
         const description = form.elements["course_description"].value;
         const date = form.elements["course_date"].value;
         const course = {
-            title: title,
-            price: price,
-            duration: duration,
-            description: description,
-            date: date,
+          title: title,
+          price: price,
+          duration: duration,
+          description: description,
+          date: date,
         };
         const transaction = db.transaction("courses", "readwrite");
         const objectStore = transaction.objectStore("courses");
         const request = objectStore.add(course);
+        console.log(course);
         request.onsuccess = function () {
-            form.reset();
-            displayCourses(db);
-        };
-        transaction.oncomplete = function () {
-            console.log("Course added to the database.");
+          form.reset();
+          displayCourses(db);
+          document.getElementById("openModal").style.display = "none";
         };
         transaction.onerror = function (event) {
-            console.log("Error adding course to the database:", event.target.error);
+          console.log("Error adding course:", event.target.error);
         };
-    }
-
-    function deleteCourse(db, courseId) {
+      }
+      function addModalAdd() {
+        const modal = document.getElementById("openModal");
+        // console.log(modal);
+        modal.style.display = "block";
+      }
+      function deleteCourse(db, courseId) {
         const transaction = db.transaction("courses", "readwrite");
         const objectStore = transaction.objectStore("courses");
         const request = objectStore.delete(courseId);
         request.onsuccess = function () {
-            displayCourses(db);
-        };
-        transaction.oncomplete = function () {
-            console.log("Course deleted from the database.");
+          displayCourses(db);
         };
         transaction.onerror = function (event) {
-            console.log(
-                "Error deleting course from the database:",
-                event.target.error
-            );
+          console.log("Error deleting course:", event.target.error);
         };
-    }
-</script>
-</body>
+      }
+    </script>
+  </body>
 </html>
